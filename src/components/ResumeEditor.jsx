@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
 function ResumeEditor({ detailOf, resumeData, setResumeData }) {
   const [inputDetails, setInputDetails] = useState("");
@@ -17,11 +17,11 @@ function ResumeEditor({ detailOf, resumeData, setResumeData }) {
           role: expInputArray[4],
           position: expInputArray[5],
         };
-        // const newExp = [ ...resumeData.experience, expObj ];
-        resumeData.experience.push(expObj);
-        const newExp = [ ...resumeData.experience];
-        console.log(resumeData.experience);
-        setResumeData(...resumeData, newExp);
+        const newExp = [...resumeData.experience, expObj];
+
+        console.log(setResumeData); //printing undefined in console
+
+        // setResumeData({ ...resumeData, experience: newExp });
         break;
       case "edu":
         const eduInputArray = inputDetails.split(",");
@@ -37,8 +37,8 @@ function ResumeEditor({ detailOf, resumeData, setResumeData }) {
         break;
       case "skill":
         const newSkills = [...resumeData.skills, inputDetails];
-        console.log(newSkills);
-        setResumeData(...resumeData, newSkills);
+        setResumeData({ ...resumeData, skills: newSkills });
+        console.log(resumeData, "editor41");
         break;
       case "cert":
         const certInputArray = inputDetails.split(",");
@@ -50,7 +50,7 @@ function ResumeEditor({ detailOf, resumeData, setResumeData }) {
         };
         const newCert = [...resumeData.certificate, certObj];
         console.log(newCert);
-        setResumeData(...resumeData, newCert);
+        setResumeData({ ...resumeData, certificate: newCert });
         break;
       case "achieve":
         // setAchieve(...achieve, inputDetails);
@@ -58,7 +58,7 @@ function ResumeEditor({ detailOf, resumeData, setResumeData }) {
         // setFunc(...data, achieve);
         const newAchieve = [...resumeData.achievements, inputDetails];
         console.log(newAchieve);
-        setResumeData(...resumeData, newAchieve);
+        setResumeData({ ...resumeData, achievements: newAchieve });
         break;
       default:
         console.log("defualt switch case");
@@ -78,4 +78,4 @@ function ResumeEditor({ detailOf, resumeData, setResumeData }) {
   );
 }
 
-export default ResumeEditor
+export default ResumeEditor;
