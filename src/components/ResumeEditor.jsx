@@ -21,7 +21,6 @@ function ResumeEditor({ detailOf, resumeData, setResumeData }) {
 
         const newExp = [...resumeData.experience, expObj];
         setResumeData({ ...resumeData, experience: newExp });
-        console.log(resumeData);
         break;
       case "edu":
         const eduInputArray = inputDetails.split(",");
@@ -36,7 +35,6 @@ function ResumeEditor({ detailOf, resumeData, setResumeData }) {
 
         const newEdu = [...resumeData.education, eduObj];
         setResumeData({ ...resumeData, education: newEdu });
-        console.log(resumeData);
         break;
       case "skill":
         let skillObj = {
@@ -46,7 +44,6 @@ function ResumeEditor({ detailOf, resumeData, setResumeData }) {
         
         const newSkills = [...resumeData.skills, skillObj];
         setResumeData({ ...resumeData, skills: newSkills });
-        console.log(resumeData);
         break;
       case "cert":
         const certInputArray = inputDetails.split(",");
@@ -61,7 +58,6 @@ function ResumeEditor({ detailOf, resumeData, setResumeData }) {
 
         const newCert = [...resumeData.certificate, certObj];
         setResumeData({ ...resumeData, certificate: newCert });
-        console.log(resumeData);
         break;
       case "achieve":
         const achieveObj = {
@@ -70,7 +66,6 @@ function ResumeEditor({ detailOf, resumeData, setResumeData }) {
         }
         const newAchieve = [...resumeData.achievements, achieveObj];
         setResumeData({ ...resumeData, achievements: newAchieve });
-        console.log(resumeData);
         break;
       default:
         console.log("defualt switch case");
