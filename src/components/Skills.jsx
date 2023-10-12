@@ -3,7 +3,6 @@ import ResumeEditor from './ResumeEditor';
 
 function Skills({ resumeData, setResumeData }) {
   let skills = resumeData.skills;
-  let key = 1;
   return (
     <>
       <h2>Technical Skills</h2>
@@ -13,8 +12,8 @@ function Skills({ resumeData, setResumeData }) {
         setResumeData={setResumeData}
       ></ResumeEditor>
       <ul>
-        {skills.map((skill) => {
-          return <li key={key++}>{skill}</li>;
+        {skills.map((s) => {
+          return <li key={s.skillId}>{s.skill}</li>;
         })}
       </ul>
     </>

@@ -3,7 +3,6 @@ import ResumeEditor from './ResumeEditor';
 
 function Achievements({ resumeData, setResumeData }) {
   let achievements = resumeData.achievements;
-  let key = 1;
   return (
     <>
       <h2>Achievements</h2>
@@ -14,7 +13,7 @@ function Achievements({ resumeData, setResumeData }) {
       ></ResumeEditor>
       <ul>
         {achievements.map((achievement) => {
-          return <li key={key++}>{achievement}</li>;
+          return <li key={achievement.achieveId}>{achievement.achieve}</li>;
         })}
       </ul>
     </>

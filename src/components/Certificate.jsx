@@ -3,7 +3,6 @@ import ResumeEditor from './ResumeEditor';
 
 function Certificate({ resumeData, setResumeData }) {
   let certificate = resumeData.certificate;
-  let key = 1;
   return (
     <>
       <h2>Certificates</h2>
@@ -14,7 +13,7 @@ function Certificate({ resumeData, setResumeData }) {
       ></ResumeEditor>
       {certificate.slice(0, 5).map((cert) => {
         return (
-          <div key={key++}>
+          <div key={cert.certId}>
             <p>
               I have done certification in{" "}
               <a href={cert.url} style={{ textDecoration: "none" }}>

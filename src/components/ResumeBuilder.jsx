@@ -15,7 +15,7 @@ function ResumeBuilder() {
       <Nav />
       <hr style={{ width: "80%" }} />
       <h1>Resume</h1>
-      <Experience resumeData={resumeData} setResume={setResumeData} />
+      <Experience resumeData={resumeData} setResumeData={setResumeData} />
       <Education resumeData={resumeData} setResumeData={setResumeData} />
       {resume.skills && resume.skills.length !== 0 && (
         <Skills resumeData={resumeData} setResumeData={setResumeData} />

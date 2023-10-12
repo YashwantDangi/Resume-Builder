@@ -3,7 +3,6 @@ import ResumeEditor from './ResumeEditor';
 
 function Education({ resumeData, setResumeData }) {
   let education = resumeData.education;
-  let key = 1;
   return (
     <>
       <h2>Education</h2>
@@ -12,9 +11,9 @@ function Education({ resumeData, setResumeData }) {
         resumeData={resumeData}
         setResumeData={setResumeData}
       ></ResumeEditor>
-      {education.map((edu) => {
+      {education.reverse().slice(0,2).map((edu) => {
         return (
-          <div key={key++}>
+          <div key={edu.eduId}>
             <p>
               I have completed {edu.qualification} in {edu.specification} from{" "}
               {edu.institute} in {edu.passOutYear}

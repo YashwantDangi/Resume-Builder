@@ -8,8 +8,9 @@ function ResumeEditor({ detailOf, resumeData, setResumeData }) {
     switch (detailOf) {
       case "exp":
         const expInputArray = inputDetails.split(",");
+
         let expObj = {
-          expId: parseInt(++resumeData.experience.length),
+          expId: parseInt(resumeData.experience.length + 1),
           year: expInputArray[0],
           startMonth: expInputArray[1],
           endMonth: expInputArray[2],
@@ -17,48 +18,59 @@ function ResumeEditor({ detailOf, resumeData, setResumeData }) {
           role: expInputArray[4],
           position: expInputArray[5],
         };
-        // const newExp = [ ...resumeData.experience, expObj ];
-        resumeData.experience.push(expObj);
-        const newExp = [ ...resumeData.experience];
-        console.log(resumeData.experience);
-        setResumeData(...resumeData, newExp);
+
+        const newExp = [...resumeData.experience, expObj];
+        setResumeData({ ...resumeData, experience: newExp });
+        console.log(resumeData);
         break;
       case "edu":
         const eduInputArray = inputDetails.split(",");
+
         let eduObj = {
+          eduId: parseInt(resumeData.education.length + 1),
           qualification: eduInputArray[0],
           specification: eduInputArray[1],
           passOutYear: eduInputArray[2],
           institute: eduInputArray[3],
         };
+
         const newEdu = [...resumeData.education, eduObj];
-        console.log(newEdu);
-        setResumeData(...resumeData, newEdu);
+        setResumeData({ ...resumeData, education: newEdu });
+        console.log(resumeData);
         break;
       case "skill":
-        const newSkills = [...resumeData.skills, inputDetails];
-        console.log(newSkills);
-        setResumeData(...resumeData, newSkills);
+        let skillObj = {
+          skillId: parseInt(resumeData.skills.length + 1),
+          skill: inputDetails,
+        }
+        
+        const newSkills = [...resumeData.skills, skillObj];
+        setResumeData({ ...resumeData, skills: newSkills });
+        console.log(resumeData);
         break;
       case "cert":
         const certInputArray = inputDetails.split(",");
+
         let certObj = {
+          certId: parseInt(resumeData.certificate.length + 1),
           certiName: certInputArray[0],
           platform: certInputArray[1],
           date: certInputArray[2] || "",
           url: certInputArray[3] || "",
         };
+
         const newCert = [...resumeData.certificate, certObj];
-        console.log(newCert);
-        setResumeData(...resumeData, newCert);
+        setResumeData({ ...resumeData, certificate: newCert });
+        console.log(resumeData);
         break;
       case "achieve":
-        // setAchieve(...achieve, inputDetails);
-        // console.log(achieve);
-        // setFunc(...data, achieve);
-        const newAchieve = [...resumeData.achievements, inputDetails];
-        console.log(newAchieve);
-        setResumeData(...resumeData, newAchieve);
+        const achieveObj = {
+          achieveId: parseInt(resumeData.achievements.length + 1),
+          achieve: inputDetails,
+        }
+        const newAchieve = [...resumeData.achievements, achieveObj];
+        setResumeData({ ...resumeData, achievements: newAchieve });
+        console.log(resumeData);
         break;
       default:
         console.log("defualt switch case");

@@ -30,18 +30,21 @@ export const resume = {
   ],
   education: [
     {
+      eduId: 1,
       qualification: "B.Tech",
       specification: "Computer Science",
       passOutYear: 2023,
       institute: "Lakshmi Narain College Of Technology, Bhopal",
     },
     {
+      eduId: 2,
       qualification: "XII",
       specification: "PCM",
       passOutYear: 2019,
       institute: "Army Public School, Bhopal",
     },
     {
+      eduId: 3,
       qualification: "X",
       specification: "",
       passOutYear: 2017,
@@ -49,59 +52,98 @@ export const resume = {
     },
   ],
   skills: [
-    "java",
-    "j2ee",
-    "jdbc",
-    "mysql",
-    "spring frameworks",
-    "mongodb",
-    "express js",
-    "react js",
-    "node js",
+    {
+      skillId: 1,
+      skill: "java",
+    },
+    {
+      skillId: 2,
+      skill: "j2ee",
+    },
+    {
+      skillId: 3,
+      skill: "jdbc",
+    },
+    {
+      skillId: 4,
+      skill: "mysql",
+    },
+    {
+      skillId: 5,
+      skill: "spring frameworks",
+    },
+    {
+      skillId: 6,
+      skill: "mongodb",
+    },
+    {
+      skillId: 7,
+      skill: "express js",
+    },
+    {
+      skillId: 8,
+      skill: "react js",
+    },
+    {
+      skillId: 9,
+      skill: "node js",
+    },
   ],
   certificate: [
     {
+      certId: 1,
       certiName: "Introduction to Java",
       platform: "Coding Ninja",
       date: "",
       url: "",
     },
     {
+      certId: 2,
       certiName: "Ordered Data Structure",
       platform: "Coursera",
       date: "",
       url: "",
     },
     {
+      certId: 3,
       certiName: "Spring frameworks",
       platform: "Udemy",
       date: "",
       url: "",
     },
     {
+      certId: 4,
       certiName: "MERN FullStack Internship",
       platform: "DevTown",
       date: "",
       url: "",
     },
     {
+      certId: 5,
       certiName: "Java Training",
       platform: "Cognizant",
       date: "",
       url: "",
     },
     {
+      certId: 6,
       certiName: "Java Training",
       platform: "Persistent Systems",
       date: "",
       url: "",
     },
     {
+      certId: 7,
       certiName: "Java FullStack Training",
       platform: "Wipro",
       date: "",
       url: "",
     },
   ],
-  achievements: ["Got 5 Star in Java on Hackerrank"],
+  achievements: [
+    {
+      achieveId: 1,
+      achieve: "Got 5 Star in Java on Hackerrank"
+    },
+  ],
 };

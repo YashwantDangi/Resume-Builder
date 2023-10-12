@@ -12,7 +12,7 @@ function Experience({ resumeData, setResumeData }) {
         resumeData={resumeData}
         setResumeData={setResumeData}
       ></ResumeEditor>
-      {experiences.map((exp) => {
+      {experiences.reverse().slice(0,2).map((exp) => {
         return (
           <div key={exp.expId}>
             <p>
